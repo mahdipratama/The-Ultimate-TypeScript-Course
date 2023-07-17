@@ -1,6 +1,7 @@
 console.log('Hello world');
 
 let age: number = 20;
+if (age < 50) age += 10;
 
 /*
   The export {} statement indicates that the file is an ES module. In TypeScript, any file containing a top-level import or export is considered to be a module.
