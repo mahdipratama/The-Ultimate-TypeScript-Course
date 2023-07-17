@@ -23,6 +23,6 @@ This repo holds code, exercises and summaries from <a href="https://codewithmosh
 
 **IDE**: VSCode
 
-**Operating System**: Pop.os
+**Operating System**: Pop!\_os
 
 **TypeScript compiler edition**: 5.1.6
