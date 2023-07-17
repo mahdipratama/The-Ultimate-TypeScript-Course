@@ -21,12 +21,8 @@ This repo holds code, exercises and summaries from <a href="https://codewithmosh
 
 ## Development environment
 
-**IDE**: WebStorm
+**IDE**: VSCode
 
-**Operating System**: win11
+**Operating System**: Pop.os
 
-**TypeScript compiler edition**: 5.0.4
-
-## License
-
-Under MIT License, feel free to do anything to improve this project
+**TypeScript compiler edition**: 5.1.6
