@@ -1,3 +1,7 @@
+//==================================================================//
+
+// Create Classes
+
 class Account {
   id: number;
   owner: string;
@@ -14,3 +18,14 @@ class Account {
     this.balance += amount;
   }
 }
+
+//==================================================================//
+
+// Creating Objects
+
+const account1 = new Account(1, 'Nami', 0);
+account1.deposit(100);
+console.log(account1.balance); // 100
+console.log(account1); // Account { id: 1, owner: 'Nami', balance: 100 }
+console.log(typeof account1); // Object
+console.log(account1 instanceof Account); // true
