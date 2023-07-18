@@ -127,3 +127,36 @@ function render(document: unknown) {
 
   if (document instanceof Function) console.log(document.name);
 }
+
+//==================================================================//
+
+// The never Type
+
+function processEvents(): never {
+  // This function never returns because
+  // it has an infinite loop.
+  while (true) {}
+}
+
+// processEvents();
+
+// below will be unreachable
+// console.log('Hello World');
+
+/*EXERCISES*/
+
+// 1). Given the data below, de ne a type alias for representing users.
+
+type Users = { name: string; age: number; occupation?: string }[];
+
+let user: Users = [
+  {
+    name: 'John Smith',
+    age: 30,
+    occupation: 'Software engineer',
+  },
+  {
+    name: 'Kate Muller',
+    age: 28,
+  },
+];
