@@ -52,3 +52,15 @@ let textBox: UIWidget = {
   drag: () => {},
   resize: () => {},
 };
+
+//==================================================================//
+
+// Literal Types
+// To limit a values we can assign to a variable
+
+// Literal (exact, specific)
+type Quantity = 50 | 100;
+let quantity: Quantity = 100;
+
+// , it's also can be a string not only number
+type Metric = 'cm' | 'inch';
