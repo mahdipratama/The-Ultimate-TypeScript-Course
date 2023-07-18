@@ -19,3 +19,16 @@ let employee: Employee = {
     console.log(date);
   },
 };
+
+//==================================================================//
+
+// Union Types
+// We can give a variable or function parameter more than 1 type
+function kgToLbs(weight: number | string): number {
+  // Narrowing
+  if (typeof weight === 'number') return weight * 2.2;
+  else return parseInt(weight) * 2.2;
+}
+
+kgToLbs(10);
+kgToLbs('10kg');
