@@ -64,3 +64,12 @@ let quantity: Quantity = 100;
 
 // , it's also can be a string not only number
 type Metric = 'cm' | 'inch';
+
+//==================================================================//
+
+// Nullable Types
+
+function greet(name: string | null | undefined) {
+  if (name) console.log(name.toUpperCase());
+  else console.log('Hola!');
+}
