@@ -62,7 +62,7 @@ let textBox: UIWidget = {
 type Quantity = 50 | 100;
 let quantity: Quantity = 100;
 
-// , it's also can be a string not only number
+// it's also can be a string not only number
 type Metric = 'cm' | 'inch';
 
 //==================================================================//
@@ -160,3 +160,15 @@ let user: Users = [
     age: 28,
   },
 ];
+
+// 2). Birds fly. Fish swim. A Pet can be a Bird or Fish. Use type aliases to represent these
+
+type Bird = {
+  fly: () => void;
+};
+
+type Fish = {
+  swim: () => void;
+};
+
+type Pet = 'Bird' | 'Fish';
