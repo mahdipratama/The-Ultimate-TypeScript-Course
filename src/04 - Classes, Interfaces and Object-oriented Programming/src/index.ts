@@ -131,3 +131,42 @@ class Account3 {
     return this._balance;
   }
 }
+
+//==================================================================//
+
+// Getters and Setters
+
+class Account4 {
+  nickname?: string;
+
+  constructor(
+    public id: number,
+    public owner: string,
+    private _balance: number
+  ) {}
+
+  deposit(amount: number): void {
+    if (amount <= 0) throw new Error('Invalid amount');
+    this._balance += amount;
+  }
+
+  private calculateTax() {
+    return this._balance * 1.2;
+  }
+
+  // getters is a method inside class that we used for getting a value of property
+  get balance(): number {
+    return this._balance;
+  }
+
+  // for setting its value
+  // set balance(value: number) {
+  //   if (value < 0) throw new Error('Invalid value');
+
+  //   this._balance = value;
+  // }
+}
+
+const account4 = new Account4(1, 'Nami', 120);
+console.log(account4.balance);
+// account4.balance = 1;
