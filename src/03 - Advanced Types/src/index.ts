@@ -182,3 +182,12 @@ type DayOfWeek =
   | 'Friday'
   | 'Saturday'
   | 'Sunday';
+
+// Simplify the following code snippets:
+// let user = getUser();
+// console.log(user && user.address ? user.address.street : undefined);
+// let x = foo !== null && foo !== undefined ? foo : bar();
+
+console.log(user?.address?.street);
+
+let x = foo ?? bar();
