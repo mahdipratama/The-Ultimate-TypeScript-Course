@@ -96,3 +96,38 @@ class Account2 {
 const account2 = new Account2(1, 'Nami', 120);
 // We can't access the balance property outside of its class because we set the property with 'private' keyword
 // account2.balance = -1;
+
+//==================================================================//
+
+// Parameter Properties
+
+class Account3 {
+  // readonly id: number;
+  // owner: string;
+  // private _balance: number;
+  nickname?: string;
+
+  // Parameter properties create concise code
+  constructor(
+    public id: number,
+    public owner: string,
+    private _balance: number
+  ) {
+    // this.id = id;
+    // this.owner = owner;
+    // this._balance = balance;
+  }
+
+  deposit(amount: number): void {
+    if (amount <= 0) throw new Error('Invalid amount');
+    this._balance += amount;
+  }
+
+  private calculateTax() {
+    return this._balance * 1.2;
+  }
+
+  getBalance(): number {
+    return this._balance;
+  }
+}
