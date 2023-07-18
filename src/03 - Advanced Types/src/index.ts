@@ -116,3 +116,14 @@ let phone = <HTMLInputElement>document.getElementById('phone');
 // HTMLElement
 // HTMLInputElement
 phone.value;
+
+//==================================================================//
+
+// The unknown Type
+
+function render(document: unknown) {
+  // Narrowing
+  if (typeof document === 'string') console.log(document.toUpperCase());
+
+  if (document instanceof Function) console.log(document.name);
+}
