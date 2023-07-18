@@ -107,3 +107,12 @@ let ride = {
   // Nullish coalescing operator
   speed: speed ?? 30,
 };
+
+//==================================================================//
+
+// Type Assetions
+
+let phone = <HTMLInputElement>document.getElementById('phone');
+// HTMLElement
+// HTMLInputElement
+phone.value;
