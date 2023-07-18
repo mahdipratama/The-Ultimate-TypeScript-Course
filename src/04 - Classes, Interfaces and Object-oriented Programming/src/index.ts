@@ -170,3 +170,21 @@ class Account4 {
 const account4 = new Account4(1, 'Nami', 120);
 console.log(account4.balance);
 // account4.balance = 1;
+
+//==================================================================//
+
+// Index Signatures
+
+// Index Signatures for creating object properties dinamically
+
+class SeatAssignment {
+  // A1, A2, ...
+  // Nami, Pika, ...
+
+  // Index signature property
+  [seatNumber: string]: string;
+}
+
+const seats = new SeatAssignment();
+seats.A1 = 'Nami';
+seats.A2 = 'Pika';
