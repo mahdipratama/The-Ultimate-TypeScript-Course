@@ -84,9 +84,9 @@ class Account2 {
     this._balance += amount;
   }
 
-  private calculateTax() {
-    return this._balance * 1.2;
-  }
+  // private calculateTax() {
+  //   return this._balance * 1.2;
+  // }
 
   getBalance(): number {
     return this._balance;
@@ -123,9 +123,9 @@ class Account3 {
     this._balance += amount;
   }
 
-  private calculateTax() {
-    return this._balance * 1.2;
-  }
+  // private calculateTax() {
+  //   return this._balance * 1.2;
+  // }
 
   getBalance(): number {
     return this._balance;
@@ -150,9 +150,9 @@ class Account4 {
     this._balance += amount;
   }
 
-  private calculateTax() {
-    return this._balance * 1.2;
-  }
+  // private calculateTax() {
+  //   return this._balance * 1.2;
+  // }
 
   // getters is a method inside class that we used for getting a value of property
   get balance(): number {
@@ -188,3 +188,30 @@ class SeatAssignment {
 const seats = new SeatAssignment();
 seats.A1 = 'Nami';
 seats.A2 = 'Pika';
+
+//==================================================================//
+
+// Static Members
+
+class Ride {
+  private static _activeRides: number = 0;
+
+  start() {
+    Ride._activeRides++;
+  }
+  stop() {
+    Ride._activeRides--;
+  }
+
+  static get activeRides() {
+    return Ride._activeRides;
+  }
+}
+
+const ride1 = new Ride();
+ride1.start();
+
+const ride2 = new Ride();
+ride2.start();
+
+console.log(Ride.activeRides);
