@@ -344,3 +344,28 @@ class Student2 extends Person2 {
     console.log('Taking a test');
   }
 }
+
+//==================================================================//
+
+// Abstract Classes and Methods
+
+// by add 'abstract' keyword we telling the typescript compiler this class is not ready so another class like 'Circle' has to extends it
+abstract class Shape {
+  constructor(public color: string) {}
+
+  // abstract method would only appears inside of abstract class
+  abstract render(): void;
+}
+
+class Circle extends Shape {
+  constructor(public radius: number, color: string) {
+    super(color);
+  }
+
+  override render(): void {
+    console.log('Rendering a circle');
+  }
+}
+
+// let shape = new Shape('red');
+// shape.render();
