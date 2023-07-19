@@ -405,3 +405,62 @@ class GoogleCalender implements Calendar {
     throw new Error('Method not implemented.');
   }
 }
+
+//========================= EXERCISES ================================//
+
+// 01). Define a class called Logger that takes the name of a le in its constructor and provides a method for writing messages to that le. Don’t worry about the actual le I/O operations. Just de ne the class with the right members.
+
+// answer :
+class Logger {
+  constructor(public logFile: string) {}
+  log(message: string) {}
+}
+
+// 02). Given the Person class below, create a getter for getting the full name of a person.
+class Person3 {
+  constructor(public firstName: string, public lastName: string) {}
+}
+
+// answer :
+class Person4 {
+  constructor(public firstName: string, public lastName: string) {}
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+// 03). Create a new class called Employee that extends Person and adds a new property called salary.
+
+// answer:
+class Employee extends Person {
+  constructor(firstName: string, lastName: string, public salary: number) {
+    super(firstName, lastName);
+  }
+}
+
+// 04). What is the difference between private and protected members?
+
+// answer: Private members are not inherited by child classes.
+
+// 05). Given the data below, de ne an interface for representing employees:
+let employee = {
+  name: 'John Smith',
+  salary: 50_000,
+  address: {
+    street: 'Flinders st',
+    city: 'Melbourne',
+    zipCode: 3144,
+  },
+};
+
+// answer:
+interface Address {
+  street: string;
+  city: string;
+  zipCode: number;
+}
+interface Employee {
+  name: string;
+  salary: number;
+  address: Address;
+}
