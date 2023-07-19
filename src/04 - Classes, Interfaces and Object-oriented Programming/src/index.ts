@@ -262,7 +262,7 @@ class Person1 {
   }
 }
 
-class Student1 extends Person {
+class Student1 extends Person1 {
   constructor(public studentId: number, firstName: string, lastName: string) {
     super(firstName, lastName);
   }
@@ -303,6 +303,44 @@ printNames([
   new Principal1('Mary', 'Smith'),
 ]);
 
-function printNames(people: Person[]) {
+function printNames(people: Person1[]) {
   for (let person of people) console.log(person.fullName);
+}
+
+//==================================================================//
+
+// Private vs Protected Members
+
+class Person2 {
+  constructor(public firstName: string, public lastName: string) {}
+
+  get fullName() {
+    return (
+      this.firstName + ' ' + this.lastName + " and she's can" + this.walk()
+    );
+  }
+
+  // 'private' we can access it anywhere within the class but we can't access it from the outside
+  private walk() {
+    console.log('Walking');
+  }
+
+  // same as 'private' but 'protected' are inherited
+  protected talk() {
+    console.log('Talking');
+  }
+}
+
+class Student2 extends Person2 {
+  constructor(public studentId: number, firstName: string, lastName: string) {
+    super(firstName, lastName);
+  }
+
+  takeTest() {
+    // can't access walk() from parent class
+    // this.walk();
+    // can access talk() from parent class
+    this.talk();
+    console.log('Taking a test');
+  }
 }
