@@ -215,3 +215,32 @@ const ride2 = new Ride();
 ride2.start();
 
 console.log(Ride.activeRides);
+
+//==================================================================//
+
+// Inheritance
+
+// as Best practice we should implement each class in seperate file
+class Person {
+  constructor(public firstName: string, public lastName: string) {}
+
+  get fullName() {
+    return this.firstName + ' ' + this.lastName;
+  }
+
+  walk() {
+    console.log('Walking');
+  }
+}
+
+// 'extends' keyword to tell this Student class inherit everything from the Person class
+class Student extends Person {
+  constructor(public studentId: number, firstName: string, lastName: string) {
+    // super() to call the constructor of the parent class (Person)
+    super(firstName, lastName);
+  }
+
+  takeTest() {
+    console.log('Taking a test');
+  }
+}
