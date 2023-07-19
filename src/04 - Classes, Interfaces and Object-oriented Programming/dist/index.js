@@ -132,7 +132,7 @@ class Person1 {
         console.log('Walking');
     }
 }
-class Student1 extends Person {
+class Student1 extends Person1 {
     constructor(studentId, firstName, lastName) {
         super(firstName, lastName);
         this.studentId = studentId;
@@ -148,11 +148,56 @@ class Teacher1 extends Person1 {
 }
 let teacher = new Teacher1('John', 'Smith');
 console.log(teacher.fullName);
+class Principal1 extends Person1 {
+    get fullName() {
+        return 'Principal' + super.fullName;
+    }
+}
 printNames([
     new Student1(1, 'John', 'Smith'),
     new Teacher1('Mosh', 'Hamedani'),
+    new Principal1('Mary', 'Smith'),
 ]);
 function printNames(people) {
     for (let person of people)
         console.log(person.fullName);
+}
+class Person2 {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    get fullName() {
+        return (this.firstName + ' ' + this.lastName + " and she's can" + this.walk());
+    }
+    walk() {
+        console.log('Walking');
+    }
+    talk() {
+        console.log('Talking');
+    }
+}
+class Student2 extends Person2 {
+    constructor(studentId, firstName, lastName) {
+        super(firstName, lastName);
+        this.studentId = studentId;
+    }
+    takeTest() {
+        this.talk();
+        console.log('Taking a test');
+    }
+}
+class Shape {
+    constructor(color) {
+        this.color = color;
+    }
+}
+class Circle extends Shape {
+    constructor(radius, color) {
+        super(color);
+        this.radius = radius;
+    }
+    render() {
+        console.log('Rendering a circle');
+    }
 }

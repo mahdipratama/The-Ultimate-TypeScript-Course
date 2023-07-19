@@ -369,3 +369,39 @@ class Circle extends Shape {
 
 // let shape = new Shape('red');
 // shape.render();
+
+//==================================================================//
+
+// Interfaces
+// there are other building blocks in OOP besides 'Class' and it called 'Interfaces'
+// usage of Interfaces is to define the interface or shape of an objects
+
+// abstract class Calendar {
+//   constructor(public name: string) {}
+
+//   abstract addEvent(): void;
+//   abstract removeEvent(): void;
+// }
+
+// interface block is more concise
+interface Calendar {
+  name: string;
+  addEvent(): void;
+  removeEvent(): void;
+}
+
+interface CloudCalender extends Calendar {
+  sync(): void;
+}
+
+// highlight the name of classes (GoogleCalender) then press CTRL + . to automatically implement an interface
+class GoogleCalender implements Calendar {
+  constructor(public name: string) {}
+
+  addEvent(): void {
+    throw new Error('Method not implemented.');
+  }
+  removeEvent(): void {
+    throw new Error('Method not implemented.');
+  }
+}
