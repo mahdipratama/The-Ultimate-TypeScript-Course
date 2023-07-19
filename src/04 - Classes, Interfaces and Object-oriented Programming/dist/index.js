@@ -141,10 +141,18 @@ class Student1 extends Person {
         console.log('Taking a test');
     }
 }
-class Teacher extends Person1 {
+class Teacher1 extends Person1 {
     get fullName() {
-        return 'Professor' + super.fullName;
+        return 'Professor ' + super.fullName;
     }
 }
-let teacher = new Teacher('John', 'Smith');
+let teacher = new Teacher1('John', 'Smith');
 console.log(teacher.fullName);
+printNames([
+    new Student1(1, 'John', 'Smith'),
+    new Teacher1('Mosh', 'Hamedani'),
+]);
+function printNames(people) {
+    for (let person of people)
+        console.log(person.fullName);
+}

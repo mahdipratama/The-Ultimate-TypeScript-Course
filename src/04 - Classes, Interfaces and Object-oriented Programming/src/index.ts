@@ -272,7 +272,7 @@ class Student1 extends Person {
   }
 }
 
-class Teacher extends Person1 {
+class Teacher1 extends Person1 {
   // 'override' for changing the implementation of the method
   // 'super.fullName' for reference the parent class (Person)
   override get fullName() {
@@ -280,5 +280,29 @@ class Teacher extends Person1 {
   }
 }
 
-let teacher = new Teacher('John', 'Smith');
+let teacher = new Teacher1('John', 'Smith');
 console.log(teacher.fullName); // Professor John Smith
+
+//==================================================================//
+
+// Polymorphism
+// It means many form and this refer to the situation where an object can take many different form
+
+class Principal1 extends Person1 {
+  override get fullName() {
+    return 'Principal' + super.fullName;
+  }
+}
+
+// Open Closed Principle
+// Classes should be open for extensison and closed for modification.
+// simply by adding new classes instead of changing existing code and this is the idea of behind Open Closed Principle
+printNames([
+  new Student1(1, 'John', 'Smith'),
+  new Teacher1('Mosh', 'Hamedani'),
+  new Principal1('Mary', 'Smith'),
+]);
+
+function printNames(people: Person[]) {
+  for (let person of people) console.log(person.fullName);
+}
