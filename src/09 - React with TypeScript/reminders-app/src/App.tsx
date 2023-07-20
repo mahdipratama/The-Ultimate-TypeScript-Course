@@ -21,9 +21,14 @@ function App() {
     setReminders(reminders.filter(reminder => reminder.id !== id));
   };
 
+  const addReminder = async (title: string) => {
+    const newReminder = await reminderService.addReminder(title);
+    setReminders([newReminder, ...reminders]);
+  };
+
   return (
     <div className="App">
-      <NewReminder />
+      <NewReminder onAddReminder={addReminder} />
       <ReminderList items={reminders} onRemoveReminder={removeReminder} />
     </div>
   );
